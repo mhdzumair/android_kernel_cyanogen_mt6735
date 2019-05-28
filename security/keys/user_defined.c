@@ -121,7 +121,7 @@ int user_update(struct key *key, struct key_preparsed_payload *prep)
 	if (ret == 0) {
 		/* attach the new data, displacing the old */
 		if (!test_bit(KEY_FLAG_NEGATIVE, &key->flags))
-			zap = key->payload.data[0];
+			zap = key->payload.data;
 		else
 			zap = NULL;
 		rcu_assign_keypointer(key, upayload);
